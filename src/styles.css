@@ -82,17 +82,24 @@ li {
   font-size: 18px;
 }
 
-.icon-trash {
-  color: #ff6b6b;
+svg.icon-trash {
+  color: #ffffff;
   width: 24px;
+  height: auto;
 }
 
-.icon-check {
-  color: #1a535c;
+svg.icon-check {
+  color: #ffffff;
   width: 24px;
+  height: auto;
 }
 
-
+.todo-list button {
+  background-color: #ff6b6b;
+  color: #f7fff7;
+  border: solid 1px #ff6b6b;
+  border-radius: 5px;
+}
 
 .input {
   background-color: #f7fff7;
@@ -108,16 +115,22 @@ li {
 
 }
 
+.new-todo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .add-button {
-  width: 120px;
-  height: 40px;
+  height: 42px;
+  padding: 0 36px;
   background-color: #ff6b6b;
   color: #f7fff7;
   border: solid 1px #ff6b6b;
   border-radius: 5px;
-  margin: 10px 0 0 0;
   font-size: 12px;
   font-weight: bold;
+  margin-left: 12px;
 }
 
 .todos-container {
@@ -141,12 +154,12 @@ li {
   margin-bottom: 24px;
 }
 
-@media (min-width: 768px) { 
+/* @media (min-width: 768px) { 
   .todos-list-container {
     width: 50%;
     margin-bottom: 0;
   }
- } 
+ }  */
 
 .todo-list {
   display: flex;
@@ -171,7 +184,12 @@ li {
   font-size: 16px;
 }
 
-.todo-item {
+.todo-list-container-for-dynamically-created-entrys {
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-list {
   background: #F7FFF7;
   color: #D62828;
   padding: 12px 20px;
@@ -183,14 +201,18 @@ li {
   justify-content: space-between;
 }
 
-.todo-item span {
+.todo-list span {
   display: block;
   text-align: center;
   padding: 0 12px;
 }
 
-.todo-item:nth-child(even) {
+.todo-list:nth-child(even) {
   background: #4ECDC4;
+}
+
+.todo-entry {
+  width: 75%;
 }
 
 .todo-description-container {
