@@ -106,10 +106,12 @@ function acceptEditTodoEntryAndDescription(){
 
 function deleteButtonClickListener(){
   const idToUseForDeleting = this.id.replace('deleteButton', '');
+  const todoList = document.getElementById(`todoList${idToUseForDeleting}`);
   const todoEntry = document.getElementById(`todoEntry${idToUseForDeleting}`);
   //const todoDescription = document.getElementById(`todoDescription${idToUseForDeleting}`);
   const editButton = document.getElementById(`editButton${idToUseForDeleting}`);
   const deleteButton = document.getElementById(this.id);
+  todoList.parentNode.removeChild(todoList);
   todoEntry.parentNode.removeChild(todoEntry);
   //todoDescription.parentNode.removeChild(todoDescription);
   editButton.parentNode.removeChild(editButton);
