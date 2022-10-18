@@ -39,6 +39,8 @@ function createNewElement(htmlObject, idToUse, className, innerHtmlText, listEle
 }
 
 function createTodoEntryAndDescription(){
+  //!!!TODO create let i and merge with localStorage for unique id
+
   if(myTemporaryTodoListEntryAndDescription.textInputTodoListEntry != ''){
     //Create TODO-List Entry
     createNewElement('div', `todoList${myTemporaryTodoListEntryAndDescription.textInputTodoListEntry}`, 'todo-list', '', 'todoList');
