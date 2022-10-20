@@ -8,38 +8,6 @@ gelb        #ffe66d
 */
 
 
-/* für Todoliste */
-.todoEntry{
-
-}
-
-/* Beschreibung */
-.todoDescription{
-
-}
-
-/* alle Button */
-.divForButtons{
-
-}
-
-/* hinzufügen */
-.editButton{
-
-}
-
-/* löschen */
-.deleteButton{
-
-}
-
-/* erledigt */
-.acceptEditButton{
-  
-}
-
-
-
 body {
   margin: 0;
   font-family: 'Exo', sans-serif;
@@ -154,28 +122,6 @@ svg.icon-check {
   margin-bottom: 24px;
 }
 
-/* @media (min-width: 768px) { 
-  .todos-list-container {
-    width: 50%;
-    margin-bottom: 0;
-  }
- }  */
-
-.todo-list {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-}
-
-.todo-list span {
-  display: block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 60%;
-  width: 100%;
-}
-
 .todo-header {
   background: #1A535C;
   color: #ffffff;
@@ -190,6 +136,10 @@ svg.icon-check {
 }
 
 .todo-list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
   background: #F7FFF7;
   color: #D62828;
   padding: 12px 20px;
@@ -203,6 +153,10 @@ svg.icon-check {
 
 .todo-list span {
   display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 60%;
+  width: 100%;
   text-align: center;
   padding: 0 12px;
 }
@@ -257,8 +211,6 @@ svg.icon-check {
 .descriptionMainDiv{
   padding: 10px;
 }
-
-
 
 /* footer */
 
