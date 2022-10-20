@@ -1,6 +1,15 @@
 let myTemporaryTodoListEntryAndDescription = {textInputTodoListEntry: '', textInputTodoListDescription: ''};
 let myTemporaryEditTodoListEntryAndDescription = {editTodoEntryElement: '', editTodoDescriptionElement: ''};
 
+const search = document.getElementById('searchbar')
+
+function searchyourself(){
+  alert('Wenn du wirklich eine Suche benötigst, solltest du erstmal deinen alten Kram erledigen!')
+} 
+
+search.addEventListener('change', searchyourself);
+
+
 const textInputTodoListEntry = document.getElementById('textInputTodoListEntry');
 //const textInputTodoListDescription = document.getElementById('textInputTodoListDescription');
 const buttonTodoList = document.getElementById('buttonTodoList');

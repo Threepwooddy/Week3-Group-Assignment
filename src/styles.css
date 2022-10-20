@@ -128,7 +128,7 @@ svg.icon-check {
   color: #f7fff7;
   border: solid 1px #ff6b6b;
   border-radius: 5px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   margin-left: 12px;
 }
@@ -265,7 +265,11 @@ svg.icon-check {
 footer {
   background-color: #4ecdc4;
   margin: 20px auto 0 auto;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
+
 
 .footer-container {
   display: flex;
