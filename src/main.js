@@ -44,6 +44,8 @@ function createNewElement(htmlObject, idToUse, className, innerHtmlText, listEle
     newTodoListElement.addEventListener('change', fillMyEditObjectOnChange);
   }else if(className === 'icon-trash .divForButtons .deleteButton'){
     newTodoListElement.addEventListener('click', deleteButtonClickListener);
+  }else if(className === 'todo-entry'){
+    newTodoListElement.addEventListener('click', lineOut);
   }
 }
 
@@ -135,6 +137,15 @@ function deleteButtonClickListener(){
   //todoDescription.parentNode.removeChild(todoDescription);
   editButton.parentNode.removeChild(editButton);
   deleteButton.parentNode.removeChild(deleteButton);
+}
+
+function lineOut(){
+  const innerHtmlValue = this.innerHTML;
+  if(innerHtmlValue.includes('<strike>')){
+    this.innerHTML = innerHtmlValue.replace(/<strike>/g, '');
+  }else{
+    this.innerHTML = `<strike>${innerHtmlValue}<strike>`;
+  }
 }
 
 textInputTodoListEntry.addEventListener('change', fillMyObjectOnChange);
