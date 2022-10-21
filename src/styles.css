@@ -67,6 +67,7 @@ svg.icon-check {
   color: #f7fff7;
   border: solid 1px #ff6b6b;
   border-radius: 5px;
+  margin-right: 25px;
 }
 
 .input {
@@ -149,6 +150,7 @@ svg.icon-check {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  height: 54px;
 }
 
 .todo-list span {
@@ -166,7 +168,7 @@ svg.icon-check {
 }
 
 .todo-entry {
-  width: 75%;
+  width: 90%;
 }
 
 .todo-description-container {
@@ -269,4 +271,8 @@ footer ul li:not(:last-of-type) {
 .copyright p {
   color:  #1a535c;
   margin: 10px 0;
+}
+
+.deleteButton{
+  padding: 10px;
 }

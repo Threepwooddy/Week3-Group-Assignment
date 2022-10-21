@@ -60,7 +60,7 @@ function createTodoEntryAndDescription(){
     }
     if(alreadyExists != myTemporaryTodoListEntryAndDescription.textInputTodoListEntry){
       createNewElement('div', `todoList${myTemporaryTodoListEntryAndDescription.textInputTodoListEntry}`, 'todo-list', '', 'todoList');
-      createNewElement('button', `editButton${myTemporaryTodoListEntryAndDescription.textInputTodoListEntry}`, 'icon-check .divForButtons .editButton', '<svg class="icon-trash .divForButtons .deleteButton .nothing" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"></path></svg>', `todoList${myTemporaryTodoListEntryAndDescription.textInputTodoListEntry}`);
+      createNewElement('button', `deleteButton${myTemporaryTodoListEntryAndDescription.textInputTodoListEntry}`, 'icon-trash .divForButtons .deleteButton', '<svg class="icon-trash .divForButtons .deleteButton .nothing" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>', `todoList${myTemporaryTodoListEntryAndDescription.textInputTodoListEntry}`);
       createNewElement('div', `todoEntry${myTemporaryTodoListEntryAndDescription.textInputTodoListEntry}`, 'todo-entry', myTemporaryTodoListEntryAndDescription.textInputTodoListEntry, `todoList${myTemporaryTodoListEntryAndDescription.textInputTodoListEntry}`);
       //Create TODO-List Description
       //if(myTemporaryTodoListEntryAndDescription.textInputTodoListDescription != ''){
@@ -70,8 +70,8 @@ function createTodoEntryAndDescription(){
       //}
       //Create TODO-List Edit Button
       //Create TODO-List Delete Button
-      createNewElement('button', `deleteButton${myTemporaryTodoListEntryAndDescription.textInputTodoListEntry}`, 'icon-trash .divForButtons .deleteButton', '<svg class="icon-trash .divForButtons .deleteButton .nothing" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>', `todoList${myTemporaryTodoListEntryAndDescription.textInputTodoListEntry}`);
-    
+      createNewElement('button', `editButton${myTemporaryTodoListEntryAndDescription.textInputTodoListEntry}`, 'icon-check .divForButtons .editButton', '<svg class="icon-trash .divForButtons .deleteButton .nothing" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"></path></svg>', `todoList${myTemporaryTodoListEntryAndDescription.textInputTodoListEntry}`);
+      
       document.getElementById('textInputTodoListEntry').value = '';
       //document.getElementById('textInputTodoListDescription').value = '';
       myTemporaryTodoListEntryAndDescription = {textInputTodoListEntry: '', textInputTodoListDescription: ''};
@@ -86,7 +86,7 @@ function createTodoEntryAndDescription(){
 function editButtonClickListener(){
   const idToUseForEditing = this.id.replace('editButton', '');
 
-  createNewElement('input', `editTodoEntryElement${idToUseForEditing}`, 'editTodoEntryElement', '', `todoEntry${idToUseForEditing}`, 'text', 'Todo Eintrag ändern');
+  createNewElement('input', `editTodoEntryElement${idToUseForEditing}`, 'editTodoEntryElement', '', `todoList${idToUseForEditing}`, 'text', 'Todo Eintrag ändern');
 
   //createNewElement('input', `editTodoDescriptionElement${idToUseForEditing}`, 'editTodoDescriptionElement', '', `todoDescription${idToUseForEditing}`, 'text', 'Todo Beschreibung ändern');
   
@@ -106,6 +106,7 @@ function acceptEditTodoEntryAndDescription(){
   
   if(myTemporaryEditTodoListEntryAndDescription.editTodoEntryElement != ''){
     document.getElementById(`todoEntry${idToUseForAcceptingEdit}`).innerText = myTemporaryEditTodoListEntryAndDescription.editTodoEntryElement;
+    editTodoEntryElement.parentNode.removeChild(editTodoEntryElement);
     //if(myTemporaryEditTodoListEntryAndDescription.editTodoDescriptionElement != ''){
       //document.getElementById(`todoDescription${idToUseForAcceptingEdit}`).innerHTML = myTemporaryEditTodoListEntryAndDescription.editTodoDescriptionElement;
     //}else{
